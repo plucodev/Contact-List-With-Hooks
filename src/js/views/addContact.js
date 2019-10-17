@@ -10,9 +10,9 @@ export const AddContact = () => {
 	const [phone, setPhone] = useState(null);
 	const [address, setAddress] = useState(null);
 
-	function test() {
-		<Consumer>{({ store, actions }) => actions.addANewContact()}</Consumer>;
-	}
+	// function test() {
+	// 	<Consumer>{({ store, actions }) => actions.addANewContact()}</Consumer>;
+	// }
 	// THIS IS ONE WAY TO USE ONCHANGE EVENT
 	// YOU DEFINE HERE THE METHOD AND YOU CALL IN THE NAME INPUT
 	function handleNameChange(e) {
@@ -78,11 +78,17 @@ export const AddContact = () => {
 								</div>
 								<button
 									//onClick={test}
-
-									onClick={() => actions.addANewContact()}
+									onClick={() => actions.addANewContact(name, email, address, phone, "store")}
 									type="button"
-									className="btn btn-primary form-control">
-									save
+									className="btn btn-primary mr-3">
+									Store
+								</button>
+								<button
+									//onClick={test}
+									onClick={() => actions.addANewContact(name, email, address, phone, "api")}
+									type="button"
+									className="btn btn-info mr-3 ">
+									API
 								</button>
 								<Link className="mt-3 w-100 text-center" to="/">
 									or get back to contacts
