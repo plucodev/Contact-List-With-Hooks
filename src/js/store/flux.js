@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			localContacts: [],
 			demo: [
 				{
 					title: "FIRST",
@@ -16,10 +17,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			addANewContact: (name, email, address, phone, saveLocation) => {
+				let store = getStore();
 				// This method will receive name, address, phone and email from addContact view
 				// and it will post to the backend or to the store
 				saveLocation === "store"
-					? console.log("store:", name, email, address, phone)
+					? setStore({
+							localContacts: store.localContacts.concat({
+								name: name,
+								email: email,
+								address: address,
+								phone: phone
+							})
+					  })
 					: console.log("api:", name, email, address, phone);
 			},
 			// Use getActions to call a function within a fuction
