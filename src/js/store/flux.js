@@ -15,6 +15,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			]
 		},
 		actions: {
+			addANewContact: (name, email, address, phone, saveLocation) => {
+				// This method will receive name, address, phone and email from addContact view
+				// and it will post to the backend or to the store
+			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
