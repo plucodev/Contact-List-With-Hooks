@@ -16,6 +16,7 @@ const injectContext = PassedComponent => {
 				setStore: updatedStore =>
 					setState({
 						store: Object.assign(state.store, updatedStore),
+
 						actions: { ...state.actions }
 					})
 			})
@@ -33,8 +34,10 @@ const injectContext = PassedComponent => {
 			fetch("https://api.github.com/users")
 				.then(response => response.json())
 				.then(data => {
-					// let { store } = state;
-					setState({ store: { ...state.store, agenda: data } });
+					let { store, actions } = state;
+					// setState(store.agenda);
+					//setState({ store: { ...state.store, agenda: data } });
+					setState({ store: { ...state.store, agenda: data }, actions: { ...actions } });
 					// setState({ store: { ...store, agenda: data } });
 				});
 		}, []);
