@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Consumer } from "../store/appContext";
+import PropTypes from "prop-types";
 
 import "../../styles/demo.scss";
 
-export const AddContact = () => {
+export const AddContact = props => {
 	const [name, setName] = useState("Paolo");
 	const [email, setEmail] = useState(null);
 	const [phone, setPhone] = useState(null);
@@ -75,14 +76,18 @@ export const AddContact = () => {
 								</div>
 								<button
 									//onClick={test}
-									onClick={() => actions.addANewContact(name, email, address, phone, "store")}
+									onClick={() =>
+										actions.addANewContact(name, email, address, phone, "store", props.history)
+									}
 									type="button"
 									className="btn btn-primary mr-3">
 									Store
 								</button>
 								<button
 									//onClick={test}
-									onClick={() => actions.addANewContact(name, email, address, phone, "api")}
+									onClick={() =>
+										actions.addANewContact(name, email, address, phone, "api", props.history)
+									}
 									type="button"
 									className="btn btn-info mr-3 ">
 									API
@@ -97,4 +102,7 @@ export const AddContact = () => {
 			}}
 		</Consumer>
 	);
+};
+AddContact.propTypes = {
+	history: PropTypes.object
 };
