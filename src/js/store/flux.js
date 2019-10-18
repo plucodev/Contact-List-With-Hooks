@@ -1,7 +1,15 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			localContacts: [],
+			apiContacts: [],
+			localContacts: [
+				{
+					name: "Paolo",
+					email: "pluco@gmail.com",
+					address: "123 Lincoln rd",
+					phone: "123456"
+				}
+			],
 			demo: [
 				{
 					title: "FIRST",
@@ -15,6 +23,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			]
 		},
+
 		actions: {
 			addANewContact: (name, email, address, phone, saveLocation, history) => {
 				let store = getStore();

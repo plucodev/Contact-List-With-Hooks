@@ -9,8 +9,11 @@ export const Home = () => (
 		<p>
 			<img src={rigoImage} />
 		</p>
-		<Link to="/contacts" className="btn btn-success">
-			Go to Contact List
+		<Link to={"/contacts/" + "local"} className="btn btn-success">
+			Go to Local Contact List
+		</Link>
+		<Link to={"/contacts/" + "api"} className="btn btn-success">
+			Go to API Contact List
 		</Link>
 	</div>
 );
