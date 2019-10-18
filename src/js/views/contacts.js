@@ -14,7 +14,7 @@ export const Contacts = props => {
 	return props.match.params.type === "local" ? (
 		<>
 			<div className="container">
-				<div className="row justify-content-center border rounded py-3">
+				<div className="row justify-content-center border rounded py-3 mb-5">
 					<h1>Contact List Local</h1>
 				</div>
 				<div className="row">
