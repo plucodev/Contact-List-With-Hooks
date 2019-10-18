@@ -5,17 +5,17 @@ import { Consumer } from "../store/appContext";
 import "../../styles/demo.scss";
 
 export const ContactCard = () => {
-    function method(store) {
-        console.log("store:", store);
-    }
-    return (
-        <div className="container">
-            <Consumer>
-                    {({ store, actions }) => {
-                        method(store);
-                        return store.localContacts.map((item, index) => {
-                            return (
-                                <li key={index} className="list-group-item border border-success rounded mb-2">
+	function method(store) {
+		console.log("store:", store);
+	}
+	return (
+		<div className="container">
+			<Consumer>
+				{({ store, actions }) => {
+					method(store);
+					return store.localContacts.map((item, index) => {
+						return (
+							<li key={index} className="list-group-item border border-success rounded mb-2">
 								<div className="row w-100">
 									<div className="col-12 col-sm-6 col-md-3 px-0">
 										<img
@@ -58,10 +58,10 @@ export const ContactCard = () => {
 									</div>
 								</div>
 							</li>
-                            );
-                        });
-                    }}
-                </Consumer>
-        </div>
-    );
+						);
+					});
+				}}
+			</Consumer>
+		</div>
+	);
 };
