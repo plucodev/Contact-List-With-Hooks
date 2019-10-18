@@ -40,6 +40,32 @@ const getState = ({ getStore, getActions, setStore }) => {
 					  })
 					: console.log("api:", name, email, address, phone).then(() => history.push("/"));
 			},
+			editContact: (name, email, address, phone, saveLocation, index) => {
+				let store = getStore();
+				let updated_store = store.localContacts
+					.slice(0, index)
+					.concat({
+						...store.localContacts[index],
+						name: name,
+						email: email,
+						address: address,
+						phone: phone
+					})
+					.concat(store.localContacts.slice(index + 1));
+				console.log("Upd", updated_store);
+				setStore({ localContacts: updated_store });
+				// saveLocation === "store"
+				// 	? setStore({
+				// 			localContacts: store.localContacts.splice(index, 1, {
+				// 				...store[index],
+				// 				name: name,
+				// 				email: email,
+				// 				address: address,
+				// 				phone: phone
+				// 			})
+				// 	  })
+				// 	: console.log("api:", name, email, address, phone).then(() => history.push("/"));
+			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");

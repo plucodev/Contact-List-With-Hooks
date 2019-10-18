@@ -37,7 +37,7 @@ const injectContext = PassedComponent => {
 					let { store, actions } = state;
 					// setState(store.agenda);
 					//setState({ store: { ...state.store, agenda: data } });
-					setState({ store: { ...state.store, agenda: data }, actions: { ...actions } });
+					setState({ store: { ...state.store, agenda: data }, actions });
 					// setState({ store: { ...store, agenda: data } });
 				});
 		}, []);
