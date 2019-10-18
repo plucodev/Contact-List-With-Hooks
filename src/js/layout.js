@@ -5,6 +5,7 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { AddContact } from "./views/addContact";
+import { EditContact } from "./views/editContact";
 import { Contacts } from "./views/contacts";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
@@ -28,6 +29,7 @@ export const Layout = () => {
 						<Route path="/demo" component={Demo} />
 						<Route path="/add" component={AddContact} />
 						<Route path="/contacts/:type" component={Contacts} />
+						<Route path="/edit-contact/:id" component={EditContact} />
 						<Route path="/single/:theid" component={Single} />
 						<Route render={() => <h1>Not found!</h1>} />
 					</Switch>
