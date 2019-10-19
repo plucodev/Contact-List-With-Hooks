@@ -67,7 +67,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				// 	: console.log("api:", name, email, address, phone).then(() => history.push("/"));
 			},
 			deleteContact: index => {
+				let store = getStore();
 				console.log("index", index);
+				setStore({ localContacts: store.localContacts.filter((item, index) => index !== index) });
 			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
