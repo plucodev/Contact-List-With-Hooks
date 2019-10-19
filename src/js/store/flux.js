@@ -66,6 +66,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				// 	  })
 				// 	: console.log("api:", name, email, address, phone).then(() => history.push("/"));
 			},
+			deleteContact: index => {
+				console.log("index", index);
+			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");

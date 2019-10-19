@@ -32,7 +32,7 @@ export const ContactCard = props => {
 													<i className="fas fa-pencil-alt mr-3" />
 												</button>
 											</Link>
-											<button className="btn" onClick={() => actions.deleteContact(item.id)}>
+											<button className="btn" onClick={() => actions.deleteContact(index)}>
 												<i className="fas fa-trash-alt" />
 											</button>
 										</div>
@@ -89,7 +89,7 @@ export const ContactCard = props => {
 														<i className="fas fa-pencil-alt mr-3" />
 													</button>
 												</Link>
-												<button className="btn" onClick={() => actions.deleteContact(item.id)}>
+												<button className="btn" onClick={() => actions.deleteContact(index)}>
 													<i className="fas fa-trash-alt" />
 												</button>
 											</div>
