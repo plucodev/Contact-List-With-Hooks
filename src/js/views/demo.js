@@ -6,14 +6,14 @@ import { Context } from "../store/appContext";
 import "../../styles/demo.scss";
 
 export const Demo = () => {
-	const store = useContext(Consumer);
+	const { store, actions } = useContext(Context);
 	function method(store) {
 		console.log("store:", store);
 	}
 	return (
 		<div className="container">
 			<ul className="list-group">
-				{store.store.demo.map((item, index) => {
+				{store.demo.map((item, index) => {
 					return (
 						<li
 							key={index}
@@ -29,9 +29,7 @@ export const Demo = () => {
 									Check store/flux.js scroll to the actions to see the code
 								</p>
 							) : null}
-							<button
-								className="btn btn-success"
-								onClick={() => store.actions.changeColor(index, "orange")}>
+							<button className="btn btn-success" onClick={() => actions.changeColor(index, "orange")}>
 								Change Color
 							</button>
 						</li>
