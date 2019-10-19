@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Consumer } from "../store/appContext";
+import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 import "../../styles/demo.scss";
 
@@ -10,7 +10,7 @@ export const ContactCard = props => {
 	}
 	return props.type === "local" ? (
 		<div className="container">
-			<Consumer>
+			<Context.Consumer>
 				{({ store, actions }) => {
 					method(store);
 
@@ -62,11 +62,11 @@ export const ContactCard = props => {
 						);
 					});
 				}}
-			</Consumer>
+			</Context.Consumer>
 		</div>
 	) : (
 		<div className="container">
-			<Consumer>
+			<Context.Consumer>
 				{({ store, actions }) => {
 					method(store);
 
@@ -122,7 +122,7 @@ export const ContactCard = props => {
 						<div>There are no contacts yet.</div>
 					);
 				}}
-			</Consumer>
+			</Context.Consumer>
 		</div>
 	);
 };

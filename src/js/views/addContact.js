@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Consumer } from "../store/appContext";
+import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 
 import "../../styles/demo.scss";
@@ -25,7 +25,7 @@ export const AddContact = props => {
 		console.log("store:", store);
 	}
 	return (
-		<Consumer>
+		<Context.Consumer>
 			{({ store, actions }) => {
 				return (
 					<div className="container">
@@ -100,7 +100,7 @@ export const AddContact = props => {
 					</div>
 				);
 			}}
-		</Consumer>
+		</Context.Consumer>
 	);
 };
 AddContact.propTypes = {

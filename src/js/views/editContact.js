@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import { Consumer } from "../store/appContext";
+import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 
 import "../../styles/demo.scss";
@@ -10,7 +10,7 @@ export const EditContact = props => {
 	const [email, setEmail] = useState();
 	const [phone, setPhone] = useState();
 	const [address, setAddress] = useState();
-	const store = useContext(Consumer);
+	const { store, actions } = useContext(Context);
 
 	// THIS IS ONE WAY TO USE ONCHANGE EVENT
 	// YOU DEFINE HERE THE METHOD AND YOU CALL IN THE NAME INPUT
@@ -40,7 +40,7 @@ export const EditContact = props => {
 							type="text"
 							className="form-control"
 							placeholder="Full Name"
-							defaultValue={store.store.localContacts[thisContact].name}
+							defaultValue={store.localContacts[thisContact].name}
 						/>
 					</div>
 					<div className="form-group">
@@ -51,7 +51,7 @@ export const EditContact = props => {
 							type="email"
 							className="form-control"
 							placeholder="Enter email"
-							defaultValue={store.store.localContacts[thisContact].email}
+							defaultValue={store.localContacts[thisContact].email}
 						/>
 					</div>
 					<div className="form-group">
@@ -64,7 +64,7 @@ export const EditContact = props => {
 							type="text"
 							className="form-control"
 							placeholder="Enter address"
-							defaultValue={store.store.localContacts[thisContact].address}
+							defaultValue={store.localContacts[thisContact].address}
 						/>
 					</div>
 					<div className="form-group">
@@ -75,12 +75,12 @@ export const EditContact = props => {
 							type="text"
 							className="form-control"
 							placeholder="Enter phone"
-							defaultValue={store.store.localContacts[thisContact].phone}
+							defaultValue={store.localContacts[thisContact].phone}
 						/>
 					</div>
 					<button
 						//onClick={test}
-						onClick={() => store.actions.editContact(name, email, address, phone, "store", thisContact)}
+						onClick={() => actions.editContact(name, email, address, phone, "store", thisContact)}
 						type="button"
 						className="btn btn-primary mr-3">
 						Store
