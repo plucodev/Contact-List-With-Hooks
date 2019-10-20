@@ -14,9 +14,9 @@ export const EditContact = props => {
 
 	// THIS IS ONE WAY TO USE ONCHANGE EVENT
 	// YOU DEFINE HERE THE METHOD AND YOU CALL IN THE NAME INPUT
-	function handleNameChange(e) {
+	const handleNameChange = e => {
 		setName(e.target.value);
-	}
+	};
 	// THIS IS ONE WAY TO USE ONCHANGE EVENT
 	// IN THIS CASE WE ARE USING AN ARROW FUNCTION AND WE ARE CALLING IT IN THE EMAIL INPUT
 	const handleEmailChange = e => {
@@ -36,6 +36,7 @@ export const EditContact = props => {
 						<label>Full Name</label>
 						<input
 							value={name}
+							{...name}
 							onChange={handleNameChange}
 							type="text"
 							className="form-control"
@@ -47,8 +48,8 @@ export const EditContact = props => {
 						<label>Email</label>
 						<input
 							value={email}
-							onChange={handleEmailChange}
 							type="email"
+							onChange={handleEmailChange}
 							className="form-control"
 							placeholder="Enter email"
 							defaultValue={store.localContacts[thisContact].email}
