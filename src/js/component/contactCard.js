@@ -36,7 +36,9 @@ export const ContactCard = props => {
 												<i className="fas fa-trash-alt" />
 											</button>
 										</div>
-										<label className="name lead">{item.name}</label>
+
+										<i className="far fa-id-card text-muted mr-3" />
+										<span className="text-muted">{item.name}</span>
 										<br />
 										<i className="fas fa-map-marker-alt text-muted mr-3" />
 										<span className="text-muted">{item.address}</span>
