@@ -38,7 +38,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 								phone: phone
 							})
 					  })
-					: console.log("api:", name, email, address, phone).then(() => history.push("/"));
+					:  fetch("https://3000-ff591d85-0559-43f4-a781-a6f680cbe2c8.ws-eu0.gitpod.io/person/", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                      name: name,
+								email: email,
+								address: address,
+								phone: phone
+                    })
+                }).then(() => {
+                    fetch("https://3000-ff591d85-0559-43f4-a781-a6f680cbe2c8.ws-eu0.gitpod.io/person/")
+                        .then(response => response.json())
+                        .then(data => {
+                            setStore({ agenda: data });
+                        });
+                })
+
+          .then(() => history.push("/"));
 			},
 			editContact: (name, email, address, phone, saveLocation, index) => {
 				let store = getStore();
