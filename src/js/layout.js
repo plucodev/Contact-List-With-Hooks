@@ -7,6 +7,7 @@ import { Demo } from "./views/demo";
 import { AddContact } from "./views/addContact";
 import { EditContact } from "./views/editContact";
 import { Contacts } from "./views/contacts";
+import { Login } from "./views/login";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
@@ -28,6 +29,7 @@ export const Layout = () => {
 						<Route exact path="/" component={Home} />
 						<Route path="/demo" component={Demo} />
 						<Route path="/add" component={AddContact} />
+						<Route path="/login" component={Login} />
 						<Route path="/contacts/:type" component={Contacts} />
 						<Route path="/edit-contact/:theindex" component={EditContact} />
 						<Route path="/single/:theid" component={Single} />
