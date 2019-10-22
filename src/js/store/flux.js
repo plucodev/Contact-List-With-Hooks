@@ -38,7 +38,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 								phone: phone
 							})
 					  })
-					: fetch("https://3000-ff591d85-0559-43f4-a781-a6f680cbe2c8.ws-eu0.gitpod.io/person/", {
+					: fetch("https://contact-list-backend.herokuapp.com/person", {
 							method: "POST",
 							headers: { "Content-Type": "application/json" },
 							body: JSON.stringify({
