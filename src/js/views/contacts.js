@@ -27,7 +27,7 @@ export const Contacts = props => {
 							</div>
 						</div>
 						<div className="row justify-content-center mt-3">
-							<Link to="/add-contact">
+							<Link to={"/add-contact/" + props.match.params.type}>
 								<button type="button" className="btn btn-outline-info">
 									Add Contact
 								</button>
@@ -53,7 +53,7 @@ export const Contacts = props => {
 							</div>
 						</div>
 						<div className="row justify-content-center mt-3">
-							<Link to="/add-contact">
+							<Link to={"/add-contact/" + props.match.params.type}>
 								<button type="button" className="btn btn-outline-info">
 									Add Contact
 								</button>

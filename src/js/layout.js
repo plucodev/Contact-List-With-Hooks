@@ -28,7 +28,7 @@ export const Layout = () => {
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route path="/demo" component={Demo} />
-						<Route path="/add" component={AddContact} />
+						<Route path="/add-contact/:thetype" component={AddContact} />
 						<Route path="/login" component={Login} />
 						<Route path="/contacts/:type" component={Contacts} />
 						<Route path="/edit-contact/:theindex" component={EditContact} />
