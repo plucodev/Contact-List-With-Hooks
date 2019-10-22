@@ -31,7 +31,7 @@ const injectContext = PassedComponent => {
 			 * state.loadSomeData(); <---- calling this function from the flux.js actions
 			 *
 			 **/
-			fetch("https://api.github.com/users")
+			fetch("https://contact-list-backend.herokuapp.com/person")
 				.then(response => response.json())
 				.then(data => {
 					let { store, actions } = state;
