@@ -72,20 +72,23 @@ export const AddContact = props => {
 							placeholder="Enter phone"
 						/>
 					</div>
-					<button
-						//onClick={test}
-						onClick={() => actions.addANewContact(name, email, address, phone, "store", props.history)}
-						type="button"
-						className="btn btn-primary mr-3">
-						Store
-					</button>
-					<button
-						//onClick={test}
-						onClick={() => actions.addANewContact(name, email, address, phone, "api", props.history)}
-						type="button"
-						className="btn btn-info mr-3 ">
-						API
-					</button>
+					{props.match.params.thetype === "local" ? (
+						<button
+							//onClick={test}
+							onClick={() => actions.addANewContact(name, email, address, phone, "store", props.history)}
+							type="button"
+							className="btn btn-primary mr-3">
+							Store
+						</button>
+					) : (
+						<button
+							//onClick={test}
+							onClick={() => actions.addANewContact(name, email, address, phone, "api", props.history)}
+							type="button"
+							className="btn btn-info mr-3 ">
+							API
+						</button>
+					)}
 					<Link className="mt-3 w-100 text-center" to="/">
 						or get back to contacts
 					</Link>
@@ -95,5 +98,6 @@ export const AddContact = props => {
 	);
 };
 AddContact.propTypes = {
-	history: PropTypes.object
+	history: PropTypes.object,
+	match: PropTypes.object
 };
