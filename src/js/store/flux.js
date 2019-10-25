@@ -27,6 +27,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		actions: {
 			addANewContact: (name, email, address, phone, saveLocation, history) => {
 				let store = getStore();
+				console.log("CLICK", store);
 				// This method will receive name, address, phone and email from addContact view
 				// and it will post to the backend or to the store
 				saveLocation === "store"
@@ -38,7 +39,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 								phone: phone
 							})
 					  })
-					: fetch("https://contact-list-backend.herokuapp.com/person", {
+					: fetch("https://3000-e7d09907-b998-4b3a-99be-2cbe0a8687b8.ws-us1.gitpod.io/person", {
 							method: "POST",
 							headers: { "Content-Type": "application/json" },
 							body: JSON.stringify({
@@ -49,14 +50,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 							})
 					  })
 							.then(() => {
-								fetch("https://contact-list-backend.herokuapp.com/person")
+								fetch("https://3000-e7d09907-b998-4b3a-99be-2cbe0a8687b8.ws-us1.gitpod.io/person")
 									.then(response => response.json())
 									.then(data => {
-										setStore({ agenda: data });
+										setStore({ apiContacts: data });
 									});
 							})
 
-							.then(() => history.push("/"));
+							.then(() => history.push("/contacts/api"));
 			},
 			editContact: (name, email, address, phone, saveLocation, index) => {
 				let store = getStore();

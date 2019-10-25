@@ -31,17 +31,19 @@ const injectContext = PassedComponent => {
 			 * state.loadSomeData(); <---- calling this function from the flux.js actions
 			 *
 			 **/
-			fetch("https://contact-list-backend.herokuapp.com/person")
+			fetch("https://3000-e7d09907-b998-4b3a-99be-2cbe0a8687b8.ws-us1.gitpod.io/person")
 				.then(response => response.json())
 				.then(data => {
 					let { store, actions } = state;
 					// setState(store.agenda);
 					//setState({ store: { ...state.store, agenda: data } });
-					setState({ store: { ...state.store, agenda: data }, actions });
+					setState({ store: { ...store, apiContacts: data }, actions });
+					console.log("FETCH", state);
 					// setState({ store: { ...store, agenda: data } });
-				});
+				})
+				.then(() => console.log("THEN", state));
 		}, []);
-
+		console.log("APPCONTEXT", state);
 		// the initial value for the context its not null anymore, but the current state of this component,
 		// the context will have a getStore and setStore functions available then, because they were declared
 		// on the state of this component

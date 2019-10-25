@@ -6,11 +6,6 @@ import "../../styles/demo.scss";
 import PropTypes from "prop-types";
 
 export const Contacts = props => {
-	console.log("match", props.match.params.type);
-	function method(store) {
-		console.log("store:", store);
-	}
-
 	return props.match.params.type === "local" ? (
 		<>
 			<div className="container">
