@@ -1,4 +1,4 @@
-# WebApp boilerplate with React and Cloud 9
+# Contact List 
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#https://github.com/4GeeksAcademy/react-hello-webapp.git)
 
