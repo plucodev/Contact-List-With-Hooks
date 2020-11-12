@@ -14,7 +14,7 @@ $ npm install
 
 Start the webpack server with live reload:
 - `$ npm run start` for windows, mac, linux or Gitpod.
-- `$ npm run c9` for Cloud 9 Users.
+
 
 ### Styles
 You can update the `styles/index.scss` or create new `.scss` files inside `styles/` and import them into your current scss or js files depending on your needs.
